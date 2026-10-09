@@ -3,573 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Health Club - Itahari, Nepal</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>City Health Club - Fitness & Gym</title>
+    <!-- Tailwind CSS CDN for modern rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans selection:bg-orange-500 selection:text-white">
+<body class="bg-zinc-950 text-zinc-100">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-900/90 backdrop-blur-md border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-600/30 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-dumbbell"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-black tracking-tight text-white">City Health <span class="text-orange-500">Club</span></span>
-                    <span class="text-xs text-slate-400 font-medium">Itahari, Nepal</span>
-                </div>
+            <a href="#" class="text-2xl font-black tracking-wider text-amber-500 uppercase flex items-center gap-2">
+                <i class="fa-solid fa-dumbbell"></i> City Health Club
             </a>
-
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#home" class="hover:text-orange-500 transition-colors">Home</a>
-                <a href="#about" class="hover:text-orange-500 transition-colors">About</a>
-                <a href="#membership" class="hover:text-orange-500 transition-colors">Membership</a>
-                <a href="#supplements" class="hover:text-orange-500 transition-colors">Supplements</a>
-                <a href="#hours" class="hover:text-orange-500 transition-colors">Hours</a>
-                <a href="#contact" class="hover:text-orange-500 transition-colors">Contact</a>
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a href="#home" class="hover:text-amber-500 transition">Home</a>
+                <a href="#about" class="hover:text-amber-500 transition">About</a>
+                <a href="#services" class="hover:text-amber-500 transition">Services</a>
+                <a href="#pricing" class="hover:text-amber-500 transition">Pricing</a>
+                <a href="#contact" class="hover:text-amber-500 transition">Find Us</a>
             </nav>
-
-            <div class="hidden md:flex items-center">
-                <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20would%20like%20to%20know%20more%20about%20your%20gym%20facilities." rel="noopener noreferrer" target="_blank" class="bg-gradient-to-r from-orange-600 to-amber-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-orange-600/20 hover:shadow-orange-600/40 hover:scale-[1.02] transition-all flex items-center gap-2 text-sm">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>WhatsApp Us</span>
+            <div>
+                <a href="#contact" class="hidden sm:inline-block bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold px-5 py-2.5 rounded-full transition uppercase text-sm tracking-wider">
+                    Join Now
                 </a>
+                <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-b border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 hover:text-amber-500 font-semibold uppercase text-sm">Home</a>
+            <a href="#about" class="block py-2 hover:text-amber-500 font-semibold uppercase text-sm">About</a>
+            <a href="#services" class="block py-2 hover:text-amber-500 font-semibold uppercase text-sm">Services</a>
+            <a href="#pricing" class="block py-2 hover:text-amber-500 font-semibold uppercase text-sm">Pricing</a>
+            <a href="#contact" class="block py-2 hover:text-amber-500 font-semibold uppercase text-sm">Find Us</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold mb-6">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Dharan Road, Itahari, Koshi Province, Nepal</span>
-                </div>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
-                    Build Strength. <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Boost Confidence.</span> <br>
-                    Live Healthier.
-                </h1>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                    Step into City Health Club, Itahari's premier fitness facility equipped with modern gear, energetic environment, and expert guidance to help you reach your peak physical potential.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20want%20to%20join%20the%20gym.%20Please%20provide%20more%20information." rel="noopener noreferrer" target="_blank" class="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-orange-600/30 transition-all flex items-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        <span>Join via WhatsApp</span>
-                    </a>
-                    <a href="#membership" class="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2">
-                        <span>View Memberships</span>
-                        <i class="fa-solid fa-arrow-down text-sm"></i>
-                    </a>
-                </div>
-
-                <!-- Features Highlights -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-12 border-t border-slate-800/80">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-dumbbell"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Equipment</div>
-                            <div class="text-xs text-slate-400">Modern & Heavy Duty</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Daily Shifts</div>
-                            <div class="text-xs text-slate-400">Morning & Evening</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-fire"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-white">Atmosphere</div>
-                            <div class="text-xs text-slate-400">High Energy & Focused</div>
-                        </div>
-                    </div>
-                </div>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-3xl space-y-6">
+            <span class="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                Transform Your Body Today
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
+                Push Your <span class="text-amber-500">Limits</span>
+            </h1>
+            <p class="text-zinc-300 text-base sm:text-lg max-w-xl mx-auto">
+                State-of-the-art equipment, professional trainers, and an energetic community built to help you smash your fitness goals.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#pricing" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-zinc-950 font-extrabold px-8 py-4 rounded-full transition uppercase tracking-wider text-sm">
+                    View Memberships
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-zinc-800 hover:bg-zinc-700 text-zinc-100 font-extrabold px-8 py-4 rounded-full transition uppercase tracking-wider text-sm border border-zinc-700">
+                    Visit Location
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="about" class="py-24 bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-amber-500 font-bold uppercase tracking-widest text-sm">About City Health Club</h2>
+                <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">The Ultimate Fitness Experience</h3>
+                <p class="text-zinc-400 leading-relaxed">
+                    At City Health Club, we believe that fitness is not just a destination, it's a lifestyle. Our facility is equipped with top-tier gear spanning free weights, cardio theaters, and functional training zones designed for all fitness levels.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="border-l-2 border-amber-500 pl-4">
+                        <h4 class="text-3xl font-black text-amber-500">15+</h4>
+                        <p class="text-sm text-zinc-400 uppercase tracking-wider mt-1">Expert Trainers</p>
+                    </div>
+                    <div class="border-l-2 border-amber-500 pl-4">
+                        <h4 class="text-3xl font-black text-amber-500">100%</h4>
+                        <p class="text-sm text-zinc-400 uppercase tracking-wider mt-1">Dedicated Support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Gym Interior" class="rounded-2xl shadow-2xl border border-zinc-800 object-cover w-full h-[400px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 mb-16">
+            <h2 class="text-amber-500 font-bold uppercase tracking-widest text-sm">What We Offer</h2>
+            <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">Our Programs & Services</h3>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-zinc-950 transition">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <h4 class="text-xl font-bold uppercase mb-3">Strength Training</h4>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Extensive selection of plates, racks, power cages, and pin-loaded resistance machines to build raw power and muscle mass.
+                </p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-zinc-950 transition">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h4 class="text-xl font-bold uppercase mb-3">Cardio Fitness</h4>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    High-end treadmills, ellipticals, stair climbers, and rowers equipped with entertainment systems to burn calories effectively.
+                </p>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl hover:border-amber-500/50 transition group">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-zinc-950 transition">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h4 class="text-xl font-bold uppercase mb-3">Personal Coaching</h4>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Customized workout plans and dietary roadmaps curated one-on-one with certified professional trainers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 mb-16">
+            <h2 class="text-amber-500 font-bold uppercase tracking-widest text-sm">Membership Plans</h2>
+            <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">Invest In Your Health</h3>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Plan 1 -->
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <div class="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold mb-4">
-                        About City Health Club
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white mb-6">
-                        Your Ultimate Fitness Destination in Itahari
-                    </h2>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Welcome to <strong>City Health Club</strong>, located at Dharan Road, Itahari, Koshi Province, Nepal. We provide a welcoming, high-energy environment dedicated to strength training, bodybuilding, cardiovascular fitness, and overall well-being.
-                    </p>
-                    <p class="text-slate-300 mb-8 leading-relaxed">
-                        Whether you are a beginner taking your first step toward fitness or an experienced athlete pushing new limits, our facility is equipped with the right tools, spacious workout zones, and motivating community to help you succeed.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
-                            <div class="text-2xl font-black text-orange-500 mb-1">100%</div>
-                            <div class="text-xs text-slate-400 font-medium">Dedicated Training Zone</div>
-                        </div>
-                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
-                            <div class="text-2xl font-black text-orange-500 mb-1">Prime</div>
-                            <div class="text-xs text-slate-400 font-medium">Dharan Road Location</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl blur-lg opacity-30"></div>
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1000&auto=format&fit=crop" alt="Gym Interior City Health Club" class="w-full h-[400px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
-                            <div class="flex items-center gap-3 bg-slate-950/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-slate-800">
-                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                                <span class="text-xs font-bold text-white">Open for Morning & Evening Shifts</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Membership Section -->
-    <section id="membership" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold mb-4">
-                    Flexible Pricing
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-                    Membership Packages
-                </h2>
-                <p class="text-slate-300">
-                    Choose the plan that fits your fitness journey. Start transforming your body today at City Health Club.
-                </p>
-                <div class="mt-4 inline-flex items-center gap-2 text-xs text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20">
-                    <i class="fa-solid fa-circle-info"></i> Admission fee is a one-time payment of NPR 1,000.
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- 1 Month -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-orange-500/50 transition-all duration-300">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Starter</span>
-                            <span class="p-2 rounded-lg bg-slate-800 text-orange-500"><i class="fa-solid fa-bolt"></i></span>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-2">1 Month</h3>
-                        <p class="text-xs text-slate-400 mb-6">Ideal for quick conditioning and trial.</p>
-                        
-                        <div class="space-y-2.5 border-t border-slate-800 pt-4 mb-6 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Membership Fee:</span>
-                                <span class="font-semibold">NPR 1,500</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Admission Fee:</span>
-                                <span class="font-semibold">NPR 1,000</span>
-                            </div>
-                            <div class="flex justify-between text-white font-bold pt-2 border-t border-slate-800/60">
-                                <span>First Month Total:</span>
-                                <span class="text-orange-500">NPR 2,500</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20am%20interested%20in%20the%201%20Month%20Package.%20Please%20provide%20more%20information." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Join Now</span>
-                    </a>
-                </div>
-
-                <!-- 3 Months -->
-                <div class="bg-slate-900 border border-orange-500/50 rounded-2xl p-6 flex flex-col justify-between relative shadow-xl shadow-orange-600/10">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-wider">
-                        Popular
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Commitment</span>
-                            <span class="p-2 rounded-lg bg-orange-500/10 text-orange-500"><i class="fa-solid fa-fire"></i></span>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-2">3 Months</h3>
-                        <p class="text-xs text-slate-400 mb-6">Great commitment for visible results.</p>
-                        
-                        <div class="space-y-2.5 border-t border-slate-800 pt-4 mb-6 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Membership Fee:</span>
-                                <span class="font-semibold">NPR 3,500</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Admission Fee:</span>
-                                <span class="font-semibold">NPR 1,000</span>
-                            </div>
-                            <div class="flex justify-between text-white font-bold pt-2 border-t border-slate-800/60">
-                                <span>First Time Total:</span>
-                                <span class="text-orange-500">NPR 4,500</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20am%20interested%20in%20the%203%20Months%20Package.%20Please%20provide%20more%20information." rel="noopener noreferrer" target="_blank" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-lg shadow-orange-600/20">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Join Now</span>
-                    </a>
-                </div>
-
-                <!-- 6 Months -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-orange-500/50 transition-all duration-300">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Best Value</span>
-                            <span class="p-2 rounded-lg bg-slate-800 text-orange-500"><i class="fa-solid fa-medal"></i></span>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-2">6 Months</h3>
-                        <p class="text-xs text-slate-400 mb-6">Build lasting strength and physique.</p>
-                        
-                        <div class="space-y-2.5 border-t border-slate-800 pt-4 mb-6 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Membership Fee:</span>
-                                <span class="font-semibold">NPR 5,000</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Admission Fee:</span>
-                                <span class="font-semibold">NPR 1,000</span>
-                            </div>
-                            <div class="flex justify-between text-white font-bold pt-2 border-t border-slate-800/60">
-                                <span>First Time Total:</span>
-                                <span class="text-orange-500">NPR 6,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20am%20interested%20in%20the%206%20Months%20Package.%20Please%20provide%20more%20information." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Join Now</span>
-                    </a>
-                </div>
-
-                <!-- 1 Year -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-orange-500/50 transition-all duration-300">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Ultimate</span>
-                            <span class="p-2 rounded-lg bg-slate-800 text-orange-500"><i class="fa-solid fa-crown"></i></span>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-2">1 Year</h3>
-                        <p class="text-xs text-slate-400 mb-6">Complete lifestyle transformation.</p>
-                        
-                        <div class="space-y-2.5 border-t border-slate-800 pt-4 mb-6 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Membership Fee:</span>
-                                <span class="font-semibold">NPR 7,000</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span class="text-slate-400">Admission Fee:</span>
-                                <span class="font-semibold">NPR 1,000</span>
-                            </div>
-                            <div class="flex justify-between text-white font-bold pt-2 border-t border-slate-800/60">
-                                <span>First Time Total:</span>
-                                <span class="text-orange-500">NPR 8,000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20am%20interested%20in%20the%201%20Year%20Package.%20Please%20provide%20more%20information." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Join Now</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Supplements Section -->
-    <section id="supplements" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold mb-4">
-                    Fuel Your Performance
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-                    Supplements Available
-                </h2>
-                <p class="text-slate-300">
-                    Authentic supplements are available directly at City Health Club to support your workout recovery and muscle gains.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Protein -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?q=80&w=600&auto=format&fit=crop" alt="Protein Supplement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-emerald-500/90 text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">
-                                In Stock
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Protein</h3>
-                            <p class="text-xs text-slate-400 leading-relaxed">
-                                High-quality protein powders to boost muscle recovery, repair tissue, and support your daily nutritional requirements.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20would%20like%20to%20know%20availability%20and%20details%20about%20Protein%20supplements." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Inquire on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Creatine -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=600&auto=format&fit=crop" alt="Creatine Supplement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-emerald-500/90 text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">
-                                In Stock
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Creatine</h3>
-                            <p class="text-xs text-slate-400 leading-relaxed">
-                                Pure creatine supplements designed to enhance strength, power output, and support high-intensity workout performance.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20would%20like%20to%20know%20availability%20and%20details%20about%20Creatine%20supplements." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Inquire on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pre-workout -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop" alt="Pre-workout Supplement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-emerald-500/90 text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">
-                                In Stock
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Pre-workout</h3>
-                            <p class="text-xs text-slate-400 leading-relaxed">
-                                Energetic pre-workout formulas to ignite focus, elevate stamina, and power through demanding training sessions.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20would%20like%20to%20know%20availability%20and%20details%20about%20Pre-workout%20supplements." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Inquire on WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hours Section -->
-    <section id="hours" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold mb-4">
-                    Timing
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-                    Opening Hours
-                </h2>
-                <p class="text-slate-300">
-                    Train according to your schedule with our convenient morning and evening shifts.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl">
-                            <i class="fa-solid fa-sun"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs text-orange-400 font-bold uppercase tracking-wider">Dawn Workout</span>
-                            <h3 class="text-xl font-black text-white">Morning Shift</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <span class="text-xs text-slate-400 block mb-1">Time:</span>
-                        <span class="text-sm font-bold text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">4:30 AM – 9:30 AM</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl">
-                            <i class="fa-solid fa-moon"></i>
-                        </div>
-                        <div>
-                            <span class="text-xs text-orange-400 font-bold uppercase tracking-wider">Evening Session</span>
-                            <h3 class="text-xl font-black text-white">Evening Shift</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <span class="text-xs text-slate-400 block mb-1">Time:</span>
-                        <span class="text-sm font-bold text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">4:00 PM – 8:30 PM</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold mb-4">
-                    Get in Touch
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">
-                    Visit or Contact Us
-                </h2>
-                <p class="text-slate-300">
-                    Have questions or ready to join? Reach out to us or drop by the gym today.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Location Card with Updated Google Maps Link -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-orange-500/50 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Location</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            City Health Club<br>
-                            Dharan Road, Itahari<br>
-                            Koshi Province, Nepal
-                        </p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/WsjjbiYy9dnD3hEd8?g_st=ac" rel="noopener noreferrer" target="_blank" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm shadow-lg shadow-orange-600/20">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span>View on Google Map</span>
-                    </a>
-                </div>
-
-                <!-- Phone & WhatsApp Card -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-orange-500/50 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Phone & WhatsApp</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Phone: +977 9804030524<br>
-                            WhatsApp: +977 9804030524
-                        </p>
-                    </div>
-                    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20would%20like%20to%20get%20in%20touch." rel="noopener noreferrer" target="_blank" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
-
-                <!-- Social Profiles Card -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-orange-500/50 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-share-nodes"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Social Profiles</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            Follow us online for updates, workouts, and fitness motivation.
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <a href="https://wa.me/9779804030524" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-orange-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </a>
-                        <a href="https://www.instagram.com/city_health_club2.0?xtok=dG8wZ2h5MHd4eHdw&utm_source=qr" aria-label="Instagram" rel="noopener noreferrer" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-orange-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@cityhealthclub.2.0" aria-label="TikTok" rel="noopener noreferrer" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-orange-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-                            <i class="fa-brands fa-tiktok text-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com/share/1QSBucZLW2/?mibextid=wwXIfr" aria-label="Facebook" rel="noopener noreferrer" target="_blank" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-orange-600 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-                            <i class="fa-brands fa-facebook-f text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/9779804030524?text=Namaste%20City%20Health%20Club,%20I%20am%20visiting%20your%20website%20and%20want%20to%20know%20more." rel="noopener noreferrer" target="_blank" aria-label="Contact on WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl shadow-emerald-600/50 hover:scale-110 transition-all">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center text-white font-bold">
-                            <i class="fa-solid fa-dumbbell"></i>
-                        </div>
-                        <span class="text-lg font-bold text-white">City Health Club</span>
-                    </div>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Build Strength. Boost Confidence. Live Healthier. Premier fitness facility located at Dharan Road, Itahari, Koshi Province, Nepal.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-sm mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-xs text-slate-400">
-                        <li><a href="#home" class="hover:text-orange-500 transition-colors">Home</a></li>
-                        <li><a href="#about" class="hover:text-orange-500 transition-colors">About Us</a></li>
-                        <li><a href="#membership" class="hover:text-orange-500 transition-colors">Membership Plans</a></li>
-                        <li><a href="#supplements" class="hover:text-orange-500 transition-colors">Supplements</a></li>
-                        <li><a href="#hours" class="hover:text-orange-500 transition-colors">Opening Hours</a></li>
-                        <li><a href="#contact" class="hover:text-orange-500 transition-colors">Contact</a></li>
+                    <h4 class="text-xl font-bold uppercase mb-2">Monthly Pass</h4>
+                    <p class="text-zinc-400 text-sm mb-6">Perfect for short-term goals or visitors.</p>
+                    <div class="text-4xl font-black text-amber-500 mb-6">$45<span class="text-sm font-normal text-zinc-400">/month</span></div>
+                    <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Full Gym Access</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Standard Equipment</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Locker Room Access</li>
                     </ul>
                 </div>
+                <a href="#contact" class="block text-center bg-zinc-800 hover:bg-zinc-700 font-bold uppercase tracking-wider py-3 rounded-xl transition text-sm">Choose Plan</a>
+            </div>
+            <!-- Plan 2 (Featured) -->
+            <div class="bg-zinc-900 border-2 border-amber-500 p-8 rounded-2xl flex flex-col justify-between relative shadow-xl shadow-amber-500/5">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-zinc-950 font-extrabold uppercase text-[10px] tracking-widest px-3 py-1 rounded-full">Most Popular</span>
                 <div>
-                    <h4 class="text-white font-bold text-sm mb-4">Connect With Us</h4>
-                    <div class="flex items-center gap-3 mb-4">
-                        <a href="https://wa.me/9779804030524" rel="noopener noreferrer" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 text-slate-300 hover:text-white hover:bg-orange-600 flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/city_health_club2.0?xtok=dG8wZ2h5MHd4eHdw&amp;utm_source=qr" rel="noopener noreferrer" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 text-slate-300 hover:text-white hover:bg-orange-600 flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@cityhealthclub.2.0" rel="noopener noreferrer" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 text-slate-300 hover:text-white hover:bg-orange-600 flex items-center justify-date-center flex items-center justify-center transition-colors"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/share/1QSBucZLW2/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 text-slate-300 hover:text-white hover:bg-orange-600 flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                    <div class="text-xs text-slate-400 flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-orange-500"></i>
-                        <span>Location: Dharan Road, Itahari, Nepal</span>
-                    </div>
+                    <h4 class="text-xl font-bold uppercase mb-2">6 Months Pass</h4>
+                    <p class="text-zinc-400 text-sm mb-6">Great commitment level for continuous gains.</p>
+                    <div class="text-4xl font-black text-amber-500 mb-6">$220<span class="text-sm font-normal text-zinc-400">/6 months</span></div>
+                    <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Full Gym Access</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> All Equipment & Zones</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> 1 Free Personal Training Session</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Locker & Shower Facilities</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block text-center bg-amber-500 hover:bg-amber-600 text-zinc-950 font-extrabold uppercase tracking-wider py-3 rounded-xl transition text-sm">Choose Plan</a>
+            </div>
+            <!-- Plan 3 -->
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h4 class="text-xl font-bold uppercase mb-2">Annual VIP</h4>
+                    <p class="text-zinc-400 text-sm mb-6">For absolute fitness dedication.</p>
+                    <div class="text-4xl font-black text-amber-500 mb-6">$400<span class="text-sm font-normal text-zinc-400">/year</span></div>
+                    <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Unlimited Full Gym Access</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Priority Booking</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Monthly Trainer Consultation</li>
+                        <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Free Guest Passes (2/mo)</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="block text-center bg-zinc-800 hover:bg-zinc-700 font-bold uppercase tracking-wider py-3 rounded-xl transition text-sm">Choose Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section with Google Maps Link -->
+    <section id="contact" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 mb-16">
+            <h2 class="text-amber-500 font-bold uppercase tracking-widest text-sm">Find Us</h2>
+            <h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">Visit Our Club Location</h3>
+            <p class="text-zinc-400 text-sm">Drop by for a workout tour or click the button below to view directions on Google Maps.</p>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-zinc-900 border border-zinc-800 p-8 sm:p-12 rounded-2xl text-center space-y-6">
+                <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <h4 class="text-2xl font-bold uppercase">City Health Club Location</h4>
+                <p class="text-zinc-300 max-w-md mx-auto text-sm">
+                    Access our precise location directly via Google Maps to plan your commute or get real-time navigation directions.
+                </p>
+                <div class="pt-4">
+                    <!-- Updated Google Maps Link Integration -->
+                    <a href="https://maps.app.goo.gl/eegfvjfCazgSZZ3m9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-extrabold uppercase tracking-wider px-8 py-4 rounded-full transition text-sm">
+                        <i class="fa-solid fa-location-arrow"></i> Open in Google Maps
+                    </a>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-                <p>&copy; 2026 City Health Club. All rights reserved.</p>
-                <p>Itahari, Koshi Province, Nepal</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <a href="#" class="text-xl font-black tracking-wider text-amber-500 uppercase flex items-center justify-center gap-2">
+                <i class="fa-solid fa-dumbbell"></i> City Health Club
+            </a>
+            <p class="text-zinc-500 text-xs uppercase tracking-wider">
+                &copy; 2026 City Health Club. All Rights Reserved.
+            </p>
+            <div class="flex items-center gap-4 text-xl">
+                <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 rounded-full flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 rounded-full flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 rounded-full flex items-center justify-center transition"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Simple JS for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
-</html>
+                </html>
+                
